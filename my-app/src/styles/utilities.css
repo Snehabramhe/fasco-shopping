@@ -1,0 +1,23 @@
+@layer utilities {
+  .text-primary { color: var(--color-text-primary); }
+  .text-secondary { color: var(--color-text-secondary); }
+  .text-muted { color: var(--color-text-muted); }
+  .text-danger { color: var(--color-danger); }
+
+  .rounded-md { border-radius: var(--radius-md); }
+  .text-outline {
+    -webkit-text-stroke: 1px var(--color-text-primary);
+    color: transparent;
+  }
+
+  .text-outline-white {
+    -webkit-text-stroke: 2px #ffffff;
+    color: transparent;
+  }
+
+  .text-outline-lg {
+    -webkit-text-stroke: 3px var(--color-text-primary);
+    color: transparent;
+  }
+
+}

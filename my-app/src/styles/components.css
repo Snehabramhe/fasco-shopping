@@ -1,0 +1,17 @@
+@layer components {
+
+  .container-base {
+    @apply mx-auto px-4;
+    max-width: var(--container-lg);
+  }
+
+  .section {
+    margin-bottom: var(--space-xxl);
+  }
+
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+  }
+}

@@ -1,0 +1,81 @@
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background: var(--color-background);
+  }
+}
+
+/* =====================================================
+   TYPOGRAPHY SYSTEM (DO NOT FREESTYLE)
+===================================================== */
+@layer components {
+
+  /* Displays */
+  .display-xl {
+    @apply font-medium tracking-[-0.055em];
+    font-family: var(--font-body);
+    font-size: clamp(64px, 10vw, 187px);
+    line-height: 1;
+  }
+
+  .display-lg {
+    @apply font-medium tracking-[-0.04em];
+    font-family: var(--font-body);
+    font-size: clamp(48px, 7vw, 91px);
+    line-height: 1;
+  }
+
+  /* Headings */
+  .heading-1 {
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1;
+  }
+
+  .heading-2 {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 3.5vw, 46px);
+  }
+
+  .heading-3 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+  }
+
+  .heading-4 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  /* Body */
+  .body {
+    font-family: var(--font-body);
+    font-size: 20px;
+  }
+
+  .body-sm {
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--color-text-secondary);
+  }
+
+  .caption {
+    font-size: 12px;
+    line-height: 26px;
+  }
+
+  .caption-danger {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: var(--color-danger);
+  }
+
+  .digital {
+    font-family: var(--font-digital);
+    font-size: 32px;
+    line-height: 1;
+  }
+}

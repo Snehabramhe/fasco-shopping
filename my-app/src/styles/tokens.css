@@ -1,0 +1,80 @@
+/* =====================================================
+   FONT FACE
+===================================================== */
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Volkhov";
+  src: url("/fonts/Volkhov-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Digital Numbers";
+  src: url("/fonts/DigitalNumbers-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* =====================================================
+   THEME TOKENS
+===================================================== */
+@theme {
+  /* ---------- Font roles ---------- */
+  --font-body: "Poppins", sans-serif;
+  --font-heading: "Volkhov", serif;
+  --font-digital: "Digital Numbers", monospace;
+
+  /* ---------- Core colors ---------- */
+  --neutral-900: #484848;
+  --neutral-700: #8A8A8A;
+  --neutral-600: #767676;
+  --neutral-200: #E0E0E0;
+  --neutral-100: #F8F8F8;
+  --neutral-50: #FAFAFA;
+
+  --danger-500: #FF4646;
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* ---------- Semantic colors ---------- */
+  --color-text-primary: var(--neutral-900);
+  --color-text-secondary: var(--neutral-700);
+  --color-text-muted: var(--neutral-600);
+  --color-surface: var(--neutral-50);
+  --color-background: var(--white);
+  --color-danger: var(--danger-500);
+
+  /* ---------- Radius ---------- */
+  --radius-md: 10px;
+
+  /* ---------- Spacing scale ---------- */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 70px;
+  --space-xxl: 150px;
+
+  /* ---------- Containers ---------- */
+  --container-sm: 320px;
+  --container-md: 768px;
+  --container-lg: 1280px;
+
+  /* ---------- Breakpoints ---------- */
+  --bp-sm: 640px;
+  --bp-md: 1024px;
+}
