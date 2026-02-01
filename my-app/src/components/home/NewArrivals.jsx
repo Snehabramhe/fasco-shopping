@@ -1,7 +1,3 @@
-// App.jsx (or NewArrivals.jsx)
-// This is a complete, responsive React component that replicates the provided UI exactly
-// Using React 18+ and Tailwind CSS v4 (which uses the new Lightning CSS engine and simplified setup)
-
 import React from "react";
 import girl4 from "@/assets/images/girl-4.png";
 import girl5 from "@/assets/images/girl-5.png";
@@ -12,8 +8,6 @@ import girl9 from "@/assets/images/girl-9.png";
 import { Button } from "@/components/ui/button";
 import Container from "../layout/Container";
 
-// Placeholder images using Unsplash sources that closely match the vibe/style of the original images
-// You can replace these URLs with your own product images later
 const products = [
   {
     id: 1,
@@ -183,11 +177,11 @@ const NewArrivals = () => {
             <button className="category-btn-active rounded-sm px-15.75 py-5">
               View More
             </button>
-          </div> 
+          </div>
         </div>
 
       </Container>
-   </section>
+    </section>
   );
 };
 

@@ -236,6 +236,12 @@
     line-height: 26px;
     font-weight: 400;
   }
+  h4 {
+    font-size: clamp(16px, 2.5vw, 28px);
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
 }
 
 /* =====================================================
@@ -246,14 +252,14 @@
   .display-xl {
     @apply font-medium tracking-[-0.055em];
     font-family: var(--font-body);
-    font-size: clamp(110px, 10vw, 187px);
+    font-size: clamp(110px, 15vw, 187px);
     line-height: 1;
   }
 
   .display-lg {
     @apply font-medium tracking-[-0.04em];
     font-family: var(--font-body);
-    font-size: clamp(28px, 7vw, 91px);
+    font-size: clamp(48px, 7vw, 91px);
     line-height: 1;
   }
 
@@ -292,6 +298,14 @@
     color: var(--color-text-secondary);
   }
 
+  .body-sm-auto {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: auto;
+    letter-spacing: 0%;
+    color: var(--color-text-primary);
+  }
+
   .caption {
     font-size: 12px;
     line-height: 26px;
@@ -316,7 +330,14 @@
   }
 
   .section {
-    margin-bottom: var(--space-xxl);
+    margin-bottom: var(--space-xl); /* mobile → LG */
+  }
+  
+  /* LG and up */
+  @media (min-width: 1024px) {
+    .section {
+      margin-bottom: var(--space-xxl);
+    }
   }
 
   .card {

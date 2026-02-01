@@ -10,19 +10,20 @@ import DealsSection from "@/components/home/DealsSection";
 import NewArrivals from "@/components/home/NewArrivals";
 import InstagramSection from "@/components/home/InstagramSection";
 import TestimonialsWrapper from "@/components/home/TestimonialWrapper";
+import CustomCarousel from "@/components/home/CustomCarousel";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-     <HeroSection />
-       <DealsSection/>
-       <NewArrivals/>
+      <HeroSection />
+      <DealsSection />
+      <NewArrivals />
       <PromoBanner />
-      <InstagramSection/>
-       <TestimonialsWrapper/>
-       <Newsletter />
-      <Footer /> 
+      <InstagramSection />
+      <TestimonialsWrapper />
+      <Newsletter />
+      <Footer />
     </>
   );
 }

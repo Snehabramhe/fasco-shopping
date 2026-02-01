@@ -8,7 +8,7 @@ const icons = [icon1, icon2, icon3, icon4, icon5];
 
 export default function BrandMarquee() {
   return (
-    <div className="w-full overflow-hidden py-20.5 mt-6.75">
+    <div className="w-full overflow-hidden py-20.5 mt-0 md:mt-6.75">
       <div
         className="
           flex w-max

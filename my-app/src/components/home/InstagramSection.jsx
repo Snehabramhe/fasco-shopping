@@ -11,46 +11,46 @@ const images = [follow1, follow2, follow3, follow4, follow5, follow6, follow7];
 
 export default function InstagramSection() {
   return (
-    <section className="py-24 bg-white ">
-    
-        {/* Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-16 px-4">
-          <h2 className="text-4xl font-serif text-gray-800">
-            Follow Us On Instagram
-          </h2>
-          <p className="mt-4 text-sm text-gray-500 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque
-            duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
-            sollicitudin.
-          </p>
-        </div>
+    <section className="section">
 
-        {/* Image Strip */}
-        <div className="w-full relative overflow-hidden ">
-          <div className="flex justify-center items-center">
-            {images.map((src, index) => {
-              const isCenter = index === Math.floor(images.length / 2);
+      {/* Heading */} 
+      <div className="text-center max-w-2xl mx-auto mb-16 px-4">
+        <h2 className="text-4xl font-serif text-gray-800">
+          Follow Us On Instagram
+        </h2>
+        <p className="mt-4 text-sm text-gray-500 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque
+          duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
+          sollicitudin.
+        </p>
+      </div>
 
-              return (
-                <div
-                  key={index}
-                  className={`relative transition-transform duration-300
+      {/* Image Strip */}
+      <div className="w-full relative overflow-hidden ">
+        <div className="flex justify-center items-center">
+          {images.map((src, index) => {
+            const isCenter = index === Math.floor(images.length / 2);
+
+            return (
+              <div
+                key={index}
+                className={`relative transition-transform duration-300
                   ${isCenter ? "scale-110 z-10" : "scale-100"}
                 `}
-                >
-                  <img
-                    src={src}
-                    alt="Instagram post"
-                    loading="lazy"
-                    decoding="async"
-                    className="object-cover shadow-md"
-                  />
-                </div>
-              );
-            })}
-          </div>
+              >
+                <img
+                  src={src}
+                  alt="Instagram post"
+                  loading="lazy"
+                  decoding="async"
+                  className="object-cover shadow-md"
+                />
+              </div>
+            );
+          })}
         </div>
- 
+      </div>
+
     </section>
   );
 }

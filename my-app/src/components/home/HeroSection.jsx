@@ -10,13 +10,13 @@ export default function HeroSection() {
   return (
     <section>
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 items-center">
 
           <div className="bg-[#E0E0E0] md:h-full relative rounded-md">
             <img
-            src={boy1Image}
-            alt="Model"
-            className="rounded-md absolute bottom-0 md:h-[80%] max-md:static hidden md:block"
+              src={boy1Image}
+              alt="Model"
+              className="rounded-md absolute bottom-0 md:h-[80%] max-md:static hidden md:block"
             />
           </div>
 
@@ -26,16 +26,16 @@ export default function HeroSection() {
             </div>
             <div className="text-center">
               <h2 className="display-lg">ULTIMATE</h2>
-              <h1 className="display-xl text-outline tracking-tighter">SALE</h1>
-              <p className="caption mt-4">NEW COLLECTION</p>
-              <Button className="category-btn-active px-[60px] py-[20px]">Shop Now</Button>
+              <h1 className="display-xl text-outline">SALE</h1>
+              <p className="body spac">NEW COLLECTION</p>
+              <Button className="category-btn-active mt-4.75 px-15 py-5">Shop Now</Button>
             </div>
             <div>
               <img src={girlsGroup2} alt="girlsGroup2" />
             </div>
           </div>
 
-          
+
           <div className="bg-[#E0E0E0] md:h-full relative rounded-md">
             <img
               src={boy2Image}
@@ -45,7 +45,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-                 <BrandStrip/>
+        <BrandStrip />
       </Container>
 
     </section>
