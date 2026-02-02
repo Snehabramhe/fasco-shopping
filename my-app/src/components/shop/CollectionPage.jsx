@@ -8,7 +8,7 @@ import { products } from "../../data/collectionData";
 
 export default function CollectionPage() {
   return (
-    <section className="mx-auto w-full max-w-[1100px] px-4 py-10">
+    <section className="mx-auto w-full max-w-275 px-4 py-10">
       {/* Header */}
       <header className="mb-8 text-center">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Fashion</h1>

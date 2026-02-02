@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
   return (
     <article className="space-y-2">
       <div className="relative overflow-hidden rounded-xl bg-zinc-100 shadow-sm">
-        <img src={image} alt={title} className="aspect-[3/4] w-full object-cover" />
+        <img src={image} alt={title} className="aspect-3/4 w-full object-cover" />
 
         {soldOut && (
           <span className="absolute bottom-3 right-3 rounded-full bg-black/60 px-2 py-1 text-[11px] tracking-wide text-white">
@@ -26,7 +26,7 @@ export default function ProductCard({ product }) {
         {variants?.map((c, idx) => (
           <span
             key={idx}
-            className="h-[14px] w-[14px] rounded-full border border-zinc-300"
+            className="h-3.5 w-3.5 rounded-full border border-zinc-300"
             style={{ backgroundColor: c }}
           />
         ))}

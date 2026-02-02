@@ -28,7 +28,7 @@ export default function FiltersSidebar() {
       {/* Size */}
       <div className="py-4">
         <SectionTitle>Size</SectionTitle>
-        <div className="mt-3 grid max-w-[180px] grid-cols-4 gap-2">
+        <div className="mt-3 grid max-w-45 grid-cols-4 gap-2">
           {sizes.map((s) => (
             <button
               key={s}
@@ -50,7 +50,7 @@ export default function FiltersSidebar() {
             <button
               key={idx}
               aria-label="color"
-              className="h-[18px] w-[18px] rounded-full border border-zinc-200"
+              className="h-4.5 w-4.5 rounded-full border border-zinc-200"
               style={{ backgroundColor: c }}
             />
           ))}
