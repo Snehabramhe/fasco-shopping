@@ -5,6 +5,8 @@ import boy2Image from "@/assets/images/boy2.webp";
 import girlsGroup1 from "@/assets/images/girls-group-1.png"
 import girlsGroup2 from "@/assets/images/girls-group-2.png"
 import BrandStrip from "./BrandStrip";
+import CartIcon from "@/assets/icons/cart-icon.svg";
+import UpArrow from "@/assets/icons/up-arrow.svg";
 
 export default function HeroSection() {
   return (
@@ -43,6 +45,11 @@ export default function HeroSection() {
               className="rounded-md absolute bottom-0 left-[20%] md:h-[80%] hidden md:block"
             />
           </div>
+        </div>
+
+        <div className="fixed right-2 bottom-2 flex gap-4 z-100">
+         <button className="px-2 py-2 rounded-md border border-black bg-black"> <img src={CartIcon} alt="cart" /></button>
+         <button className="px-3 py-2 rounded-full border border-black"> <img src={UpArrow} alt="top" /></button>
         </div>
 
         <BrandStrip />

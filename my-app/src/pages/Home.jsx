@@ -15,7 +15,7 @@ import CustomCarousel from "@/components/home/CustomCarousel";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroSection />
       <DealsSection />
       <NewArrivals />
@@ -23,7 +23,7 @@ export default function Home() {
       <InstagramSection />
       <TestimonialsWrapper />
       <Newsletter />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
