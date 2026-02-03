@@ -1,26 +1,28 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import AuthTemplate from "@/components/auth/AuthTemplate";
+import { authSchemas } from "@/data/authSchemas";
 import { AUTH_PAGES } from "@/data/authPagesConfig";
 
 export default function AuthPage() {
-    const { type } = useParams(); // signin | signup | forgot | confirm | reset
-    const navigate = useNavigate();
+  const { type } = useParams(); // signin | signup | forgot | confirm | reset
+  const navigate = useNavigate();
 
-    const config = AUTH_PAGES[type];
+  const config = AUTH_PAGES[type];
 
-    if (!config) {
-        return <div className="p-6">Invalid auth page.</div>;
-    }
+  if (!config) return <div className="p-6">Invalid page</div>;
 
-    const onSubmit = (formData, pageKey) => {
-        console.log("Submit:", pageKey, formData);
+  // ✅ THIS connects schema to the page
+  const schema = authSchemas[config.key];
 
-        if (pageKey === "forgot") navigate("/confirm-code");
-        if (pageKey === "confirm") navigate("/reset-password");
-        if (pageKey === "reset") navigate("/sign-in");
+  const onSubmit = async (values) => {
+    console.log("SUBMIT:", type, values);
 
-    };
+    // example flow
+    if (type === "forgot") navigate("/auth/confirm");
+    if (type === "confirm") navigate("/auth/reset");
+    if (type === "reset") navigate("/auth/signin");
+  };
 
-    return <AuthTemplate config={config} onSubmit={onSubmit} />;
+  return <AuthTemplate config={config} schema={schema} onSubmit={onSubmit} />;
 }
