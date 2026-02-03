@@ -95,7 +95,7 @@ export default function ImageZoom({
           className={`hidden lg:block absolute top-0 ${overlayZ}`}
           style={{
             left: `calc(100% + 40px)`, // gap between main image and zoom
-            width: `${mainSize.w + 160}px`,
+            width: `${mainSize.w + 230}px`,
             height: `${mainSize.h + 180}px`,
           }}
         >

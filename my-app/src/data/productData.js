@@ -9,11 +9,13 @@ import CartImg from "../assets/images/cart-img.png"
 
 
 export const PRODUCT = {
+    id: 1, // ✅ REQUIRED for cart
+
     brand: "FASCO",
     name: "Denim Jacket",
     rating: 4,
     reviewCount: 3,
-      
+
     price: 39,
     compareAtPrice: 59,
     discountLabel: "SAVE 33%",
@@ -36,7 +38,7 @@ export const PRODUCT = {
     estimatedDelivery: "Jul 30 - Aug 03",
     shippingText: "On all orders over $75",
   
-    paymentBadges: CartImg,
+    paymentBadges: [CartImg], // ✅ make it an array (safe for mapping)
   
     images: [
         product10,

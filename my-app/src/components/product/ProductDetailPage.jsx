@@ -2,6 +2,10 @@ import React, { useMemo, useState, useEffect } from "react";
 import { PRODUCT } from "@/data/productData";
 import ImageZoom from "./ImageZoom";
 import CartImg from "../../assets/images/cart-img.png"
+import CartDrawer from "../cart/CartDrawer";
+import { useCart } from "../cart/CartContext";
+
+
 
 
 
@@ -110,8 +114,14 @@ function SimpleIcon({ type }) {
 export default function ProductDetailPage() {
     const [active, setActive] = useState(1);
     const [size, setSize] = useState(PRODUCT.sizes[0]);
+
+    const { addToCart } = useCart();
+
     const [color, setColor] = useState(PRODUCT.colors[0].name);
     const [qty, setQty] = useState(1);
+
+    const [cartOpen, setCartOpen] = useState(false);
+    const [wrap, setWrap] = useState(false);
 
     const stockLeft = PRODUCT.stockLeft;
     const stockTotal = PRODUCT.stockTotal;
@@ -131,6 +141,22 @@ export default function ProductDetailPage() {
         const s = secondsLeft % 60;
         return { d, h, m, s };
     }, [secondsLeft]);
+
+
+    const handleAddToCart = () => {
+        addToCart({
+            id: PRODUCT.id,                // ✅ REQUIRED
+            name: PRODUCT.name,
+            image: PRODUCT.images[active],
+            price: PRODUCT.price,
+            color,
+            size,                          // ✅ REQUIRED (your context merges by id+color+size)
+            qty,
+        });
+
+        setCartOpen(true);              // ✅ open right drawer after adding
+    };
+
 
     return (
         <div className="min-h-screen bg-white">
@@ -309,12 +335,32 @@ export default function ProductDetailPage() {
                                 </div>
                             </div>
 
+
                             <button
                                 type="button"
+                                onClick={() => {
+                                    addToCart({
+                                        id: PRODUCT.id,
+                                        name: PRODUCT.name,
+                                        image: PRODUCT.images[active],
+                                        price: PRODUCT.price,
+                                        color,
+                                        size,
+                                        qty,
+                                    });
+
+                                    // option A: open your right drawer
+                                    setCartOpen(true);
+
+                                    // option B: navigate to cart page instead:
+                                    // navigate("/cart");
+                                }}
                                 className="h-11 w-full rounded-md border border-neutral-900 bg-white px-6 text-sm font-semibold text-neutral-900 hover:bg-neutral-900 hover:text-white"
                             >
                                 Add to cart
                             </button>
+
+
                         </div>
 
                         {/* Compare / Ask / Share */}
@@ -360,13 +406,13 @@ export default function ProductDetailPage() {
                         <div className="mt-8 rounded-md bg-neutral-50 p-5 text-center">
                             <div className="flex flex-wrap items-center justify-center gap-3">
                                 {/* {PRODUCT.paymentBadges.map((p) => ( */}
-                                    <img
-                                        // key={p}
-                                        className="grid place-items-center rounded bg-white text-[10px] font-semibold text-neutral-700 shadow-sm"
-                                
-                                       src={CartImg}
-                                       alt="cart-img"
-                                    />
+                                <img
+                                    // key={p}
+                                    className="grid place-items-center rounded bg-white text-[10px] font-semibold text-neutral-700 shadow-sm"
+
+                                    src={CartImg}
+                                    alt="cart-img"
+                                />
                                 {/* ))} */}
                             </div>
                             <p className="mt-3 text-sm text-neutral-700">Guarantee safe & secure checkout</p>
@@ -374,6 +420,24 @@ export default function ProductDetailPage() {
                     </div>
                 </div>
             </div>
+
+
+            <CartDrawer
+                open={cartOpen}
+                onClose={() => setCartOpen(false)}
+                wrap={wrap}
+                setWrap={setWrap}
+                item={{
+                    name: PRODUCT.name,
+                    image: PRODUCT.images[active],
+                    price: PRODUCT.price,
+                    color,
+                    qty,
+                }}
+                onInc={() => setQty((q) => q + 1)}
+                onDec={() => setQty((q) => Math.max(1, q - 1))}
+            />
+
         </div>
     );
 }

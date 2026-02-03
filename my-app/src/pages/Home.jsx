@@ -1,4 +1,4 @@
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/layout/navbar/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import BrandStrip from "@/components/home/BrandStrip";
