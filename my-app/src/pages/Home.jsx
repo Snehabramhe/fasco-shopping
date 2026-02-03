@@ -1,6 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-
 import HeroSection from "@/components/home/HeroSection";
 import BrandStrip from "@/components/home/BrandStrip";
 import ProductGrid from "@/components/home/ProductGrid";
@@ -15,7 +14,6 @@ import CustomCarousel from "@/components/home/CustomCarousel";
 export default function Home() {
   return (
     <>
-      {/* <Navbar /> */}
       <HeroSection />
       <DealsSection />
       <NewArrivals />
@@ -23,7 +21,6 @@ export default function Home() {
       <InstagramSection />
       <TestimonialsWrapper />
       <Newsletter />
-      {/* <Footer /> */}
     </>
   );
 }
