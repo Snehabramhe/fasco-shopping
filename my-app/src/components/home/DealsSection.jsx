@@ -14,10 +14,12 @@ import Girl1 from "@/assets/images/girl-1.webp";
 import Girl2 from "@/assets/images/girl-2.png";
 import Girl3 from "@/assets/images/girl-3.png";
 import CustomCarousel from "./CustomCarousel";
+import { useNavigate } from "react-router-dom";
 
 const dealImages = [Girl1, Girl2, Girl3, Girl2, Girl1, Girl3];
 
 export default function DealsOfTheMonth() {
+  const navigate = useNavigate();
   const [api, setApi] = React.useState(null);
   const [current, setCurrent] = React.useState(0);
 
@@ -29,7 +31,7 @@ export default function DealsOfTheMonth() {
   }, [api]);
 
   return (
-    <section className="w-full bg-gray-100 pt-25 pb-36.25 section">
+    <section id="deals" className="w-full bg-gray-100 pt-25 pb-36.25 section">
       <div className="max-w-[1280px] mx-auto">
         <div className="relative mr-0">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_3fr] pl-4">
@@ -44,7 +46,7 @@ export default function DealsOfTheMonth() {
                 Scelerisque duis ultrices sollicitudin
               </p>
 
-              <Button className="mt-6 rounded-md px-17.5 py-5 category-btn-active">Buy Now</Button>
+              <Button onClick={() => navigate('/shop')} className="mt-6 rounded-md px-17.5 py-5 category-btn-active cursor-pointer">Buy Now</Button>
 
               <div className="mt-10">
                 <h4 className="mb-4">

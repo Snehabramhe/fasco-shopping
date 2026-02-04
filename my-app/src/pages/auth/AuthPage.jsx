@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import AuthTemplate from "@/components/auth/AuthTemplate";
-import { authSchemas } from "@/data/authSchemas";
+import { authSchemas } from "@/schema/authSchemas";
 import { AUTH_PAGES } from "@/data/authPagesConfig";
 
 export default function AuthPage() {

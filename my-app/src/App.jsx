@@ -1,6 +1,7 @@
 import AppLayout from "./components/AppLayout";
 import AuthPage from "./pages/auth/AuthPage";
 import CartPage from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Shop from "./pages/Shop";
@@ -30,6 +31,7 @@ export default function App() {
         { path: "/shop", element: <Shop /> },
         { path: "/product", element: <Product /> },
         { path: "/cart", element: <CartPage /> },
+        { path: "/checkout", element: <Checkout/> },
       ],
     },
 

@@ -2,8 +2,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import boy4 from "@/assets/images/boy-4.png";
 import girl10 from "@/assets/images/girl10.png";
+import { toast } from "sonner"
 
 export default function Newsletter() {
+
   return (
     <section className="w-full bg-white overflow-hidden section">
       <div className="max-w-360 mx-auto px-6">
@@ -42,7 +44,7 @@ export default function Newsletter() {
               />
             </div>
 
-            <Button className="px-11 py-5 text-sm">
+            <Button onClick={() => toast.success("You have subscribed to the newsletter")} className="px-11 py-5 text-sm cursor-pointer">
               Subscribe Now
             </Button>
           </div>

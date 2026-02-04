@@ -15,20 +15,20 @@ export default function NavbarMain() {
 
   return (
     <>
-      <header className="py-6 border-b">
+      <header className="py-6">
         <Container>
           <div className="flex items-center justify-between">
             <Link to="/">
-              <h1 className="heading-3">FASCO</h1>
+              <h1 className="heading-3 cursor-pointer">FASCO</h1>
             </Link>
 
             <nav className="hidden md:flex gap-8 body-sm">
-              <Link to="/">Home</Link>
-              <Link to="/shop" className="border-b-2 border-black pb-1">
+              <Link to="/" className="cursor-pointer">Home</Link>
+              <Link to="/shop" className="border-b-2 border-black pb-1 cursor-pointer">
                 Shop
               </Link>
-              <Link to="/products">Products</Link>
-              <Link to="/pages">Pages</Link>
+              <Link to="/products" className="cursor-pointer">Products</Link>
+              <Link to="/pages" className="cursor-pointer">Pages</Link>
             </nav>
 
             <div className="flex items-center gap-5">
@@ -42,7 +42,7 @@ export default function NavbarMain() {
                 onClick={() => navigate("/cart")}
                 aria-label="Open cart"
               >
-                <ShoppingBag className="h-5 w-5" />
+                <ShoppingBag className="h-5 w-5 cursor-pointer" />
               </button>
 
 

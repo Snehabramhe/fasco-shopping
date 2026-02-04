@@ -7,6 +7,7 @@ import girl8 from "@/assets/images/girl-8.png";
 import girl9 from "@/assets/images/girl-9.png";
 import { Button } from "@/components/ui/button";
 import Container from "../layout/Container";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -78,8 +79,9 @@ const products = [
 ];
 
 const NewArrivals = () => {
+  const navigate = useNavigate();
   return (
-    <section className="section">
+    <section id="new-arrivals" className="section">
       <Container>
         <div className="py-12">
           {/* Header */}
@@ -171,10 +173,7 @@ const NewArrivals = () => {
 
           {/* View More Button */}
           <div className="flex justify-center mt-12">
-            {/* <button className="px-15.75 py-5 category-btn bg-black hover:bg-gray-800 text-white font-medium rounded-sm transition-colors shadow-lg">
-              View More
-            </button> */}
-            <button className="category-btn-active rounded-sm px-15.75 py-5">
+            <button onClick={() => navigate('/shop')} className="category-btn-active rounded-sm px-15.75 py-5 cursor-pointer">
               View More
             </button>
           </div>

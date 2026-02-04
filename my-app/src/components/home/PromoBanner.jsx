@@ -2,11 +2,13 @@ import Container from "../layout/Container";
 import { Button } from "@/components/ui/button";
 import boy3 from "@/assets/images/boy-3.png";
 import FeaturesSection from "./FeaturesSection";
+import { useNavigate } from "react-router-dom";
 
 export default function PromoBanner() {
+  const navigate = useNavigate();
   return (
     <>
-    <section class="grid grid-cols-1 gap-4 md:grid-cols-[1fr_1fr] md:gap-0">
+    <section id="packages" class="grid grid-cols-1 gap-4 md:grid-cols-[1fr_1fr] md:gap-0">
       <div class="relative flex items-center justify-center bg-white">
         <img src={boy3} alt="Model Promo" class="max-w-full h-auto z-10" />
       </div>
@@ -39,7 +41,7 @@ export default function PromoBanner() {
 
           <p class="text-2xl font-semibold text-black">$100.00</p>
 
-          <button class="bg-black text-white px-10 py-3 rounded-lg hover:opacity-90">
+          <button onClick={() => navigate('/shop')} class="bg-black text-white px-10 py-3 rounded-lg hover:opacity-90 cursor-pointer">
             Buy Now
           </button>
         </div>

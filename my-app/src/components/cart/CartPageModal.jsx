@@ -47,7 +47,7 @@ export default function CartPageModal({
         className="
           absolute left-1/2 top-1/2 w-[95vw] -translate-x-1/2 -translate-y-1/2
           bg-white shadow-2xl rounded-xl
-          max-w-[1150px]
+          max-w-287.5
           max-h-[90vh] overflow-y-auto
           p-4 sm:p-8
         "

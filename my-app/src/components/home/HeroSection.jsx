@@ -7,8 +7,21 @@ import girlsGroup2 from "@/assets/images/girls-group-2.png"
 import BrandStrip from "./BrandStrip";
 import CartIcon from "@/assets/icons/cart-icon.svg";
 import UpArrow from "@/assets/icons/up-arrow.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
+  const navigate = useNavigate();
+
+  const scrollToSection = (id) => {
+    navigate("/");
+  
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  };
+
   return (
     <section>
       <Container>
@@ -30,7 +43,7 @@ export default function HeroSection() {
               <h2 className="display-lg">ULTIMATE</h2>
               <h1 className="display-xl text-outline">SALE</h1>
               <p className="body spac">NEW COLLECTION</p>
-              <Button className="category-btn-active mt-4.75 px-15 py-5">Shop Now</Button>
+              <Button onClick={() => navigate("/shop")} className="category-btn-active mt-4.75 px-15 py-5 cursor-pointer">Shop Now</Button>
             </div>
             <div>
               <img src={girlsGroup2} alt="girlsGroup2" />
@@ -48,8 +61,8 @@ export default function HeroSection() {
         </div>
 
         <div className="fixed right-2 bottom-2 flex gap-4 z-100">
-         <button className="px-2 py-2 rounded-md border border-black bg-black"> <img src={CartIcon} alt="cart" /></button>
-         <button className="px-3 py-2 rounded-full border border-black"> <img src={UpArrow} alt="top" /></button>
+         <button onClick={() => navigate('/cart')} className="px-2 py-2 rounded-md border border-black bg-black cursor-pointer"> <img src={CartIcon} alt="cart" /></button>
+         <button onClick={() => scrollToSection("navbar")} className="px-3 py-2 rounded-full border border-black cursor-pointer"> <img src={UpArrow} alt="top" /></button>
         </div>
 
         <BrandStrip />
