@@ -1,12 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ product }) {
+  const navigate = useNavigate();
   const { title, price, oldPrice, image, soldOut, variants } = product;
 
   return (
     <article className="space-y-2">
       <div className="relative overflow-hidden rounded-xl bg-zinc-100 shadow-sm">
-        <img src={image} alt={title} className="aspect-3/4 w-full object-cover" />
+        <img onClick={() => navigate('/product')} src={image} alt={title} className="aspect-3/4 w-full object-cover cursor-pointer" />
 
         {soldOut && (
           <span className="absolute bottom-3 right-3 rounded-full bg-black/60 px-2 py-1 text-[11px] tracking-wide text-white">

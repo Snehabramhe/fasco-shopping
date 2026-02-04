@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function money(n) {
   return `$${Number(n).toFixed(2)}`;
@@ -23,6 +24,8 @@ export default function CartDrawer({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
+
+  const navigate = useNavigate();
 
   // Lock body scroll when drawer is open
   useEffect(() => {
@@ -155,14 +158,16 @@ export default function CartDrawer({
           <div className="mt-5">
             <button
               type="button"
-              className="h-12 w-full rounded-md bg-black text-sm font-semibold text-white shadow-lg hover:bg-neutral-900"
+              onClick={() => navigate("/checkout")}
+              className="h-12 w-full rounded-md bg-black text-sm font-semibold text-white shadow-lg hover:bg-neutral-900 cursor-pointer"
             >
               checkout
             </button>
 
             <button
               type="button"
-              className="mt-4 w-full text-center text-sm font-semibold underline underline-offset-4"
+              onClick={() => navigate("/cart")}
+              className="mt-4 w-full text-center text-sm font-semibold underline underline-offset-4 cursor-pointer"
             >
               View Cart
             </button>

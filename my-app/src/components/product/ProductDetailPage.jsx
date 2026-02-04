@@ -349,18 +349,12 @@ export default function ProductDetailPage() {
                                         qty,
                                     });
 
-                                    // option A: open your right drawer
                                     setCartOpen(true);
-
-                                    // option B: navigate to cart page instead:
-                                    // navigate("/cart");
                                 }}
-                                className="h-11 w-full rounded-md border border-neutral-900 bg-white px-6 text-sm font-semibold text-neutral-900 hover:bg-neutral-900 hover:text-white"
+                                className="h-11 w-full rounded-md border border-neutral-900 bg-white px-6 text-sm font-semibold text-neutral-900 hover:bg-neutral-900 hover:text-white cursor-pointer"
                             >
                                 Add to cart
                             </button>
-
-
                         </div>
 
                         {/* Compare / Ask / Share */}

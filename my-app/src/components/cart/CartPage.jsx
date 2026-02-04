@@ -1,10 +1,13 @@
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useCart } from "@/components/cart/CartContext";
 import Container from "@/components/layout/Container";
 
 export default function CartPage() {
+  const navigate = useNavigate();
+
   const { cartItems, incQty, decQty, removeItem, wrap, setWrap } = useCart();
 
   const subtotal = useMemo(() => {
@@ -138,7 +141,8 @@ export default function CartPage() {
 
             <button
               type="button"
-              className="mt-8 w-full rounded-md bg-black py-4 text-white shadow-lg hover:bg-neutral-900"
+              onClick={() => navigate('/checkout')}
+              className="mt-8 w-full rounded-md bg-black py-4 text-white shadow-lg hover:bg-neutral-900 cursor-pointer"
             >
               Checkout
             </button>

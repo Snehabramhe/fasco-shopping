@@ -5,6 +5,7 @@ import ProductGrid from "./ProductGrid";
 import Pagination from "./Pagination";
 
 import { products } from "../../data/collectionData";
+import { Link } from "react-router-dom";
 
 export default function CollectionPage() {
   return (
@@ -13,7 +14,7 @@ export default function CollectionPage() {
       <header className="mb-8 text-center">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Fashion</h1>
         <div className="mt-2 flex items-center justify-center gap-2 text-xs text-zinc-500">
-          <a href="#" className="hover:text-zinc-800">Home</a>
+          <Link to="/" className="hover:text-zinc-800">Home</Link>
           <span>›</span>
           <span className="text-zinc-700">Fashion</span>
         </div>

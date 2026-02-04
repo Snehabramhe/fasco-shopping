@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const money = (n) => `$${Number(n).toFixed(2)}`;
 
@@ -31,6 +32,8 @@ export default function CartPageModal({
   }, [open]);
 
   if (!open) return null;
+
+  const navigate = useNavigate();
 
   const subtotal =
     cartItems.reduce((sum, it) => sum + it.price * it.qty, 0) + (wrap ? 10 : 0);
@@ -203,11 +206,11 @@ export default function CartPageModal({
               </div>
 
               {/* Buttons */}
-              <button className="h-12 w-full rounded-md bg-black text-white shadow-lg hover:bg-neutral-900">
+              <button onClick={() => navigate('/checkout')} className="h-12 w-full rounded-md bg-black text-white shadow-lg hover:bg-neutral-900 cursor-pointer">
                 Checkout
               </button>
 
-              <button className="w-full text-center underline underline-offset-4 font-semibold">
+              <button onClick={() => navigate('/cart')} className="w-full text-center underline underline-offset-4 font-semibold cursor-pointer">
                 View Cart
               </button>
             </div>
