@@ -74,7 +74,7 @@ export default function AuthTemplate({ config, schema, onSubmit }) {
 
                                     <button
                                         type="submit"
-                                        className="mt-8 w-full rounded-md bg-black py-3 text-sm font-semibold text-white hover:bg-neutral-900"
+                                        className="mt-8 w-full rounded-md bg-black py-3 text-sm font-semibold text-white hover:bg-neutral-900 cursor-pointer"
                                     >
                                         {config.primaryButton.text}
                                     </button>
@@ -84,7 +84,7 @@ export default function AuthTemplate({ config, schema, onSubmit }) {
                                         <div className="mt-3 text-right">
                                             <Link
                                                 to={config.bottomRightLink.to}
-                                                className="text-xs font-semibold text-blue-600"
+                                                className="text-xs font-semibold text-blue-600 cursor-pointer"
                                             >
                                                 {config.bottomRightLink.text}
                                             </Link>
